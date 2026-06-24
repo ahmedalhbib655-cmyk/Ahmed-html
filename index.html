@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مكتبة المحاضرات</title>
+    <!-- استدعاء ملف CSS من مجلد css -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>📚 مكتبة المحاضرات</h1>
+
+        <!-- قائمة الضيف (تسجيل الدخول / إنشاء حساب) -->
+        <nav id="guestMenu">
+            <a href="#" onclick="showPage('login')">تسجيل الدخول</a>
+            <a href="#" onclick="showPage('register')">إنشاء حساب</a>
+        </nav>
+
+        <!-- قائمة المستخدم (بعد تسجيل الدخول) -->
+        <nav id="userMenu" style="display:none;">
+            <a href="#" onclick="showPage('home')">الرئيسية</a>
+            <a href="#" onclick="showPage('lectures')">المحاضرات</a>
+            <a href="#" onclick="showPage('upload')">رفع محاضرة</a>
+            <a href="#" onclick="logout()">تسجيل الخروج</a>
+        </nav>
+    </header>
+
+    <!-- ============= الأقسام (sections) ============= -->
+
+    <!-- صفحة تسجيل الدخول -->
+    <section id="login" class="active">
+        <div class="form-box">
+            <h2>تسجيل الدخول</h2>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" />
+            <input type="password" id="loginPassword" placeholder="كلمة المرور" />
+            <button onclick="login()">دخول</button>
+
+            <div class="contact-icons">
+                <a href="tel:+249115309500">اتصل بنا</a>
+                <a href="https://wa.me/249115309500" target="_blank">Whatsapp</a>
+                <p>تواصل معنا</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- صفحة إنشاء حساب -->
+    <section id="register">
+        <div class="form-box">
+            <h2>إنشاء حساب</h2>
+            <input type="text" id="registerName" placeholder="الاسم" />
+            <input type="email" id="registerEmail" placeholder="البريد الإلكتروني" />
+            <input type="password" id="registerPassword" placeholder="كلمة المرور" />
+            <button onclick="registerUser()">تسجيل</button>
+        </div>
+    </section>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home">
+        <div class="hero">
+            <h2>مرحباً بك في مكتبة المحاضرات</h2>
+            <p>شارك محاضراتك وقم بتحميل ملفات PDF و PPT بسهولة</p>
+            <br />
+            <button onclick="showPage('lectures')">تصفح المحاضرات</button>
+        </div>
+    </section>
+
+    <!-- صفحة المحاضرات -->
+    <section id="lectures">
+        <h2>المحاضرات المتاحة</h2>
+        <div class="card">
+            <h3>برمجة 1</h3>
+            <p>ملف PDF</p>
+            <button>تحميل</button>
+        </div>
+        <div class="card">
+            <h3>قواعد البيانات</h3>
+            <p>ملف PPT</p>
+            <button>تحميل</button>
+        </div>
+        <div class="card">
+            <h3>تصميم المواقع</h3>
+            <p>ملف PDF</p>
+            <button>تحميل</button>
+        </div>
+    </section>
+
+    <!-- صفحة رفع محاضرة -->
+    <section id="upload">
+        <div class="form-box">
+            <h2>رفع محاضرة</h2>
+            <input type="text" placeholder="اسم المادة" />
+            <input type="text" placeholder="عنوان المحاضرة" />
+            <input type="file" />
+            <button onclick="uploadLecture()">رفع المحاضرة</button>
+        </div>
+    </section>
+
+    <footer>
+        جميع الحقوق محفوظة © مكتبة المحاضرات
+    </footer>
+
+    <!-- استدعاء ملف الجافاسكريب (عدّل الاسم حسب الملف الموجود) -->
+    <script src="script.jd"></script>
+    <!-- لو عايز تشتغل على الملف الموجود script.js، غيّر السطر لـ script.js -->
+</body>
+</html>
